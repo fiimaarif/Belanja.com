@@ -35,13 +35,13 @@
             <a href="{{ route('category.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/category*')) ? 'active' : '' }}">
               Categories
             </a>
-            <a href="" class="list-group-item list-group-item-action">
+            <a href="{{ route('transaction.index') }}" class="list-group-item list-group-item-action">
               Transactions
             </a>
             <a href="{{ route('user.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/user*')) ? 'active' : '' }}">
               Users
             </a>
-            <a href="index.html" class="list-group-item list-group-item-action">
+            <a href="{{ route('home') }}" class="list-group-item list-group-item-action">
               Sign Out
             </a>
           </div>
@@ -63,10 +63,16 @@
                   <li class="nav-item dropdown">
                     <a href="#" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown">
                       <img src="/images/icon-user.png" alt="" class="rounded-circle mr-2 profile-picture">
-                      Hi, Fima
+                      Hi, {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu">
-                      <a href="/" class="dropdown-item">Logout</a>
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                               Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                     </div>
                   </li>
                   <li>
