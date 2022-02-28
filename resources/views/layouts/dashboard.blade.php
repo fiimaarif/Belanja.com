@@ -103,9 +103,9 @@
                         data-toggle="dropdown"
                     >
                         <img
-                            src="/images/icon-user.png"
+                            src="/images/{{ Auth::user()->images }}"
                             alt=""
-                            class="rounded-circle mr-2 profile-picture"
+                            class="rounded-circle mr-2 profile-picture w-25"
                         />
                         Hi, {{ Auth::user()->name }}
                     </a>
@@ -130,10 +130,10 @@
                             $carts = \App\Cart::where('users_id', Auth::user()->id)->count();
                         @endphp
                         @if($carts > 0)
-                            <img src="/images/icon-cart-filled.svg" alt="" />
+                            <img src="/images/cart.svg" alt="" />
                             <div class="card-badge">{{ $carts }}</div>
                         @else
-                            <img src="/images/icon-cart-empty.svg" alt="" />
+                            <img src="/images/cart.svg" alt="" />
                         @endif
                     </a>
                   </li>

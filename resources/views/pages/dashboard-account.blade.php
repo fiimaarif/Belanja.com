@@ -27,6 +27,16 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
+                       <div class="photo d-block">
+                            <div class="position-relative me-20">
+                                <img src="/images/{{ Auth::user()->images }}" width="90" height="90" class="avatar img-fluid" />
+                            </div>
+                            <div class="image-upload d-block mt-2 mb-2">
+                                <label for="avatar">
+                                </label>
+                                <input id="avatar" type="file" name="avatar" accept="image/png, image/jpeg" />
+                            </div>
+                        </div>
                       <label for="name">Your Name</label>
                       <input
                         type="text"

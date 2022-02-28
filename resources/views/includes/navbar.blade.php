@@ -51,9 +51,9 @@
                         data-toggle="dropdown"
                     >
                         <img
-                            src="/images/icon-user.png"
+                            src="/images/{{ Auth::user()->images }}"
                             alt=""
-                            class="rounded-circle mr-2 profile-picture"
+                            class="rounded-circle mr-2 profile-picture w-25"
                         />
                         Hi, {{ Auth::user()->name }}
                     </a>
